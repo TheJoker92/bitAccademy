@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~primeicons/primeicons.css';
+
+@import "../node_modules/primeicons/primeicons.css";
+@import "../node_modules/primeng/resources/themes/luna-green/theme.css";
+@import "../node_modules/primeng/resources/primeng.min.css";
+
+
+body {
+    margin: 0px;
+}
+
+app-user .p-button.p-button-info.p-button-outlined {
+    border: 3px solid;
+}
