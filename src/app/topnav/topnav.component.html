@@ -1,0 +1,37 @@
+<div class="main-container">
+    <div class="container-logo alignment-cc">
+        <label for="">bitAccademy</label>
+    </div>
+
+    <div class="container-my-projects">
+        
+    </div>
+    <div class="right-side-user">
+        <div class="container-info">
+            <div>
+                <span>
+                    Alessandro
+                </span>
+            </div>
+            <div>
+                <span>
+                    De Micco
+                </span>
+            </div>
+        </div>
+        <app-button-options [items]="items"></app-button-options>
+    </div>
+    
+
+</div>    
+<p-dialog [header]="header" [(visible)]="displayResponsive" [breakpoints]="{'960px': '75vw'}" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+        <form [formGroup]="settingForm">
+            <label for="name">{{ 'TOPNAV.POPUPIMPOSTAZIONI.LABELS.NAME' | lang }}</label>
+            <input id="name" type="text" formControlName="firstName">
+        </form>
+        <ng-template pTemplate="footer">
+        <p-button (click)="displayResponsive=false" [label]="confirmLabel" styleClass="p-button-text"></p-button>
+        <p-button (click)="displayResponsive=false" [label]="cancelLabel" styleClass="p-button-text"></p-button>
+        </ng-template>
+</p-dialog>

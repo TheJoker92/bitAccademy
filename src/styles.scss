@@ -10,6 +10,16 @@ body {
     margin: 0px;
 }
 
-app-user .p-button.p-button-info.p-button-outlined {
+/**
+    ALIGNMENT
+*/
+
+.alignment-cc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+app-topnav .p-button.p-button-info.p-button-outlined {
     border: 3px solid;
 }
