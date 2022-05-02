@@ -10,13 +10,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { SlideMenuModule } from 'primeng/slidemenu';
 import { DialogModule } from 'primeng/dialog';
-
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { TopnavComponent } from './topnav/topnav.component';
 import { ButtonOptionsComponent } from './componens/button-options/button-options.component';
 import { LangPipe } from './utils/pipes/lang.pipe';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LangPipe } from './utils/pipes/lang.pipe';
     UserComponent,
     TopnavComponent,
     ButtonOptionsComponent,
-    LangPipe
+    LangPipe,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { LangPipe } from './utils/pipes/lang.pipe';
     ButtonModule,
     SlideMenuModule,
     DialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

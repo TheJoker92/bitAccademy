@@ -23,3 +23,16 @@ body {
 app-topnav .p-button.p-button-info.p-button-outlined {
     border: 3px solid;
 }
+
+p-button.confirm-button button {
+    border: 1px solid #4FC3F7 !important;
+    border-radius: 10px !important;
+    color: #4FC3F7 !important;
+}
+
+app-loader .p-dialog .p-dialog-content {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
