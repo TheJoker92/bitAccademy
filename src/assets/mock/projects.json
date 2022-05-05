@@ -1,0 +1,5 @@
+{
+    "code": 200,
+    "message": [{"id": 1, "name": "bitAccademy", "description": "questo progetto è per la comunità scientifica", "dateCreation": "2022-04-28", "attachments": [], "teams": [{"id": 0, "firstame": "Alessandro", "lastname": "De Micco", "nickname": "aledem92", "projectLinks": []}], "links": []}],
+    "errors": []
+}
