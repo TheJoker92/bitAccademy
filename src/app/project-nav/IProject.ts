@@ -8,4 +8,5 @@ export interface IProject {
     attachments: any[]
     teams: IUser[]
     links: string[]
+    isActive: boolean
 }

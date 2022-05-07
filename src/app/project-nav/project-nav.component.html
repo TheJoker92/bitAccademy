@@ -1,5 +1,21 @@
-<div>
-    <div *ngFor="let project of projects">
-        <button pButton pRipple type="button" [label]="project.name" class="p-button-secondary"></button>
+<div class="container">
+    <div *ngFor="let project of projects" class="mr-5px">
+        <button pButton 
+                pRipple 
+                type="button" 
+                class="p-button-secondary " 
+                [ngClass]="{'selected': project.isActive, 'not_selected': !project.isActive}"
+                (click)="select(project)"
+                [label]="project.name" ></button>
+                
+    </div>
+    <div class="mr-5px">
+        <button pButton 
+                pRipple 
+                icon="pi pi-plus"
+                type="button" 
+                class="p-button-secondary new_project"
+                (click)="clear()"
+                [label]="newProject"></button>
     </div>
 </div>

@@ -1,5 +1,8 @@
 {
     "code": 200,
-    "message": [{"id": 1, "name": "bitAccademy", "description": "questo progetto è per la comunità scientifica", "dateCreation": "2022-04-28", "attachments": [], "teams": [{"id": 0, "firstame": "Alessandro", "lastname": "De Micco", "nickname": "aledem92", "projectLinks": []}], "links": []}],
+    "message": [
+        {"id": 1, "name": "bitAccademy", "description": "questo progetto è per la comunità scientifica.", "dateCreation": "2022-04-28", "attachments": [], "teamMembers": [0], "links": []},
+        {"id": 2, "name": "pubDrunkers", "description": "questo progetto è per la prenotazione nei locali e gestione clienti.", "dateCreation": "2018-02-01", "attachments": [], "teamMembers": [0,1,2], "links": []}
+    ],
     "errors": []
 }

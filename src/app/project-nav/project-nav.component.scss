@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+}
+
+.mr-5px {
+    margin-right: 5px;
+}
+
+button.not_selected {
+    font-style: normal;
+    border: 4px solid #B0BEC5;
+}
+
+button.selected {
+    font-style: oblique;
+    border: 4px solid yellow;
+}
+
+
+button.new_project {
+    font-style: normal;
+    border: 4px solid rgb(40, 138, 40);
+}
+
+.new_project {
+    background-color: rgb(40, 138, 40);
+    color: white;
+}
