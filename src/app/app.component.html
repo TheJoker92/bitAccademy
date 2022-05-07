@@ -2,8 +2,9 @@
 <div class="dark pr10 pl10">
     <app-topnav></app-topnav>
 </div>
-<container-element [ngSwitch]="actualRoute">
+
+<container-element [ngSwitch]="routeService.actualRoute.split('/')[0]">
     <app-logged *ngSwitchCase="ENDPOINTS.LOGGED"></app-logged>
     
     <app-login *ngSwitchDefault>...</app-login>
-  </container-element>
+</container-element>

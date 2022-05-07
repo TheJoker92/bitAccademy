@@ -25,6 +25,8 @@ import { ErrorService } from './services/error/error.service';
 import { LoginComponent } from './pages/login/login.component';
 import { LoggedComponent } from './pages/logged/logged.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { NewProjectComponent } from './pages/logged/new-project/new-project.component';
+import { ProjectsComponent } from './pages/logged/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { RegisterComponent } from './pages/register/register.component';
     ProjectNavComponent,
     LoginComponent,
     LoggedComponent,
-    RegisterComponent
+    RegisterComponent,
+    NewProjectComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,

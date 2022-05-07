@@ -3,6 +3,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { NavigationStart, Event as NavigationEvent } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ENDPOINTS } from './app-routing.module';
+import { RouteService } from './services/route.service';
 
 @Component({
   selector: 'app-root',
@@ -12,27 +13,25 @@ import { ENDPOINTS } from './app-routing.module';
 export class AppComponent {
   title = 'bitAccademy';
 
-  router$: Subscription | undefined
-
-  actualRoute: string = ""
-
   ENDPOINTS = ENDPOINTS
 
-  constructor(public router: Router) {
+  constructor(public router: Router,
+              public routeService: RouteService) {
     
   }
 
   ngOnInit() {
-    this.router$ = this.router.events
+    this.routeService.router$ = this.router.events
     .subscribe(
       (event: NavigationEvent) => {
         if(event instanceof NavigationStart) {
-          this.actualRoute = event.url.substring(1);
+          this.routeService.actualRoute = event.url.substring(1);
+          console.log(this.routeService.actualRoute)
         }
       })
   }
 
   ngOnDestroy() {
-    if (this.router$) this.router$.unsubscribe()
+    if (this.routeService.router$) this.routeService.router$.unsubscribe()
   }
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ENDPOINTS } from 'src/app/app-routing.module';
+import { RouteService } from 'src/app/services/route.service';
 
 @Component({
   selector: 'app-logged',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoggedComponent implements OnInit {
 
-  constructor() { }
+  ENDPOINTS = ENDPOINTS
+
+  constructor(public routeService: RouteService) {
+    console.log(this.routeService.actualRoute)
+  }
 
   ngOnInit(): void {
   }

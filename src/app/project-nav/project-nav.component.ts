@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { ENDPOINTS } from '../app-routing.module';
 import { ErrorService } from '../services/error/error.service';
 import { codeHttp } from '../services/http/codeHttpEnum';
 import { HttpService } from '../services/http/http.service';
@@ -21,6 +23,7 @@ export class ProjectNavComponent implements OnInit {
 
   constructor(private httpService: HttpService,
               private projectService: ProjectService,
+              private router: Router,
               public errorService: ErrorService) { }
 
   ngOnInit(): void {
@@ -49,15 +52,18 @@ export class ProjectNavComponent implements OnInit {
     }
 
     this.projectService.selectedProject  = selectedProject
+
+    this.router.navigate([ENDPOINTS.LOGGED + "/" + ENDPOINTS.LOGGED_PROJECTS + "/" + selectedProject.id])
   }
 
-  clear() {
+  create() {
     for (let project of this.projects) {
       project.isActive = false
     }
 
     this.projectService.selectedProject  = undefined
 
+    this.router.navigate([ENDPOINTS.LOGGED + "/" + ENDPOINTS.LOGGED_NEW_PROJECT])
   }
 
 }

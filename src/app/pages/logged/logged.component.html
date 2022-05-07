@@ -2,3 +2,10 @@
     <app-project-nav></app-project-nav>
 </div>
 
+<container-element [ngSwitch]="routeService.actualRoute.split('/')[1]">
+    <app-new-project *ngSwitchCase="ENDPOINTS.LOGGED_NEW_PROJECT"></app-new-project>
+    <app-projects *ngSwitchCase="ENDPOINTS.LOGGED_PROJECTS"></app-projects>
+    <app-login *ngSwitchDefault>...</app-login>
+</container-element>
+
+
