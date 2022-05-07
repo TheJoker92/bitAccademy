@@ -2,8 +2,8 @@
 <div class="dark pr10 pl10">
     <app-topnav></app-topnav>
 </div>
-
-<div class="light-dark pr10 pl10">
-    <app-project-nav></app-project-nav>
-</div>
-
+<container-element [ngSwitch]="actualRoute">
+    <app-logged *ngSwitchCase="ENDPOINTS.LOGGED"></app-logged>
+    
+    <app-login *ngSwitchDefault>...</app-login>
+  </container-element>

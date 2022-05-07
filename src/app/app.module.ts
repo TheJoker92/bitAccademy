@@ -22,6 +22,9 @@ import { LoaderComponent } from './loader/loader.component';
 import { ProjectNavComponent } from './project-nav/project-nav.component';
 import { HttpService } from './services/http/http.service';
 import { ErrorService } from './services/error/error.service';
+import { LoginComponent } from './pages/login/login.component';
+import { LoggedComponent } from './pages/logged/logged.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { ErrorService } from './services/error/error.service';
     ButtonOptionsComponent,
     LangPipe,
     LoaderComponent,
-    ProjectNavComponent
+    ProjectNavComponent,
+    LoginComponent,
+    LoggedComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
