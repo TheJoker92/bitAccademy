@@ -27,6 +27,11 @@ body {
     color: white;
 }
 
+.h-scroll {
+    display: flex;
+    overflow-x: auto;
+}
+
 
 /**
     ALIGNMENT
@@ -53,4 +58,8 @@ app-loader .p-dialog .p-dialog-content {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+app-project-nav span {
+    white-space: nowrap;
 }

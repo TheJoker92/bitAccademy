@@ -1,6 +1,19 @@
-.container-form {
+.container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 80vw;
     max-width: 600px;
+
+    form input {
+        width: 50vw;
+        max-width: 500px;
+        }
+}
+
+.container-form {
+    width: 100%;
+    display: flex;
+    justify-content: end;
 }

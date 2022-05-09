@@ -1,14 +1,4 @@
 <div class="container">
-    <div *ngFor="let project of projects" class="mr-5px">
-        <button pButton 
-                pRipple 
-                type="button" 
-                class="p-button-secondary " 
-                [ngClass]="{'selected': project.isActive, 'not_selected': !project.isActive}"
-                (click)="select(project)"
-                [label]="project.name" ></button>
-                
-    </div>
     <div class="mr-5px">
         <button pButton 
                 pRipple 
@@ -17,5 +7,17 @@
                 class="p-button-secondary new_project"
                 (click)="create()"
                 [label]="newProject"></button>
+    </div>
+    <div class="h-scroll">
+        <div *ngFor="let project of projects" class="mr-5px">
+            <button pButton 
+                    pRipple 
+                    type="button" 
+                    class="p-button-secondary " 
+                    [ngClass]="{'selected': project.isActive, 'not_selected': !project.isActive}"
+                    (click)="select(project)"
+                    [label]="project.name" ></button>
+                    
+        </div>
     </div>
 </div>
