@@ -1,23 +1,35 @@
-<div class="container">
-    <div class="mr-5px">
-        <button pButton 
-                pRipple 
-                icon="pi pi-plus"
-                type="button" 
-                class="p-button-secondary new_project"
-                (click)="create()"
-                [label]="newProject"></button>
-    </div>
-    <div class="h-scroll">
-        <div *ngFor="let project of projects" class="mr-5px">
+<div *ngIf="device.isXsDevice;else hamburger_menu">
+    <p-menubar [model]="items"></p-menubar>
+
+</div>
+
+<ng-template #hamburger_menu>
+    <div class="container">
+        <div class="mr-5px">
             <button pButton 
                     pRipple 
+                    icon="pi pi-plus"
                     type="button" 
-                    class="p-button-secondary " 
-                    [ngClass]="{'selected': project.isActive, 'not_selected': !project.isActive}"
-                    (click)="select(project)"
-                    [label]="project.name" ></button>
-                    
+                    class="p-button-secondary new_project"
+                    (click)="create()"
+                    [label]="newProject"></button>
+        </div>
+        <div class="h-scroll">
+            <div *ngFor="let project of projects" class="mr-5px">
+                <button pButton 
+                        pRipple 
+                        type="button" 
+                        class="p-button-secondary " 
+                        [ngClass]="{'selected': project.isActive, 'not_selected': !project.isActive}"
+                        (click)="select(project)"
+                        [label]="project.name" ></button>
+                        
+            </div>
         </div>
     </div>
-</div>
+</ng-template>
+
+
+
+
+

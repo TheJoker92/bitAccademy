@@ -18,6 +18,17 @@ body {
     padding-right:10px;
 }
 
+.mr10 {
+    margin-right: 10px;
+}
+
+/**
+    COLORS
+**/
+.color-blue {
+    color: blue I !important;
+}
+
 .dark {
     background: #191919;
 }
@@ -62,4 +73,22 @@ app-loader .p-dialog .p-dialog-content {
 
 app-project-nav span {
     white-space: nowrap;
+}
+
+.mt-10px {
+    margin-top: 10px;
+}
+
+.mt-20px {
+    margin-top: 20px;
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-container {
+    display: flex;
+    justify-content: space-between;
 }

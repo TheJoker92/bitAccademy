@@ -1,10 +1,46 @@
 <div class="container">
-    <h1>{{ 'LOGGED.NEW_PROJECT' | lang }}</h1>
+    <div>
+        <h2>{{ 'LOGGED.NEW_PROJECT' | lang }}</h2>
+    </div>
     <div class="container-form">
         <form action="">
-                <div class="p-inputgroup">
+                <div class="p-inputgroup w-50vw mt-10px">
                     <span class="p-inputgroup-addon"><i class="pi pi-briefcase"></i></span>
-                    <input type="text" pInputText placeholder="Username">         
+                    <input type="text" 
+                           pInputText 
+                           placeholder="{{ 'PROJECTNAV.NEW_PROJECT.FORM.NAME_PROJECT' | lang}}">         
+                </div>
+                <div class="p-inputgroup mt-10px">
+                    <textarea class="w-50vw h-50px" 
+                              pInputTextarea
+                              placeholder="{{ 'PROJECTNAV.NEW_PROJECT.FORM.DESCRIPTION' | lang}}"></textarea>
+                </div>
+                <div class="p-inputgroup column-container mt-10px">
+                    <h3>{{ 'PROJECTNAV.NEW_PROJECT.FORM.ATTACHMENTS' | lang}}</h3>
+                    <button pButton 
+                            pRipple 
+                            type="button" 
+                            label="{{ 'PROJECTNAV.NEW_PROJECT.FORM.ADD_ATTACHMENT' | lang}}" 
+                            class="p-button-outlined p-button-secondary"
+                            style="color:black"
+                            (click)="fileUpload.click()"></button>
+                            <input id="inputfile" 
+                                   #fileUpload 
+                                   multiple
+                                   type="file" 
+                                   (click)="importFile($event)">
+
+                </div>
+                <div class="mt-20px container-uploaded-file">
+                    <div *ngIf="!uploadedFiles.length;else fileListContainer">
+                        {{ 'PROJECTNAV.NEW_PROJECT.FORM.NO_FILE' | lang}}
+                    </div>
+                    <ng-template #fileListContainer>
+                        <div *ngFor="let uploadedFile of uploadedFiles">
+                            <app-uploaded-file [uploadedFile]="uploadedFile"></app-uploaded-file>
+                            <br>
+                        </div>
+                    </ng-template>
                 </div>
         </form>
     </div>

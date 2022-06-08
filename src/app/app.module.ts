@@ -12,6 +12,7 @@ import { ButtonModule } from 'primeng/button';
 import { SlideMenuModule } from 'primeng/slidemenu';
 import { DialogModule } from 'primeng/dialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { MenubarModule } from 'primeng/menubar';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -27,6 +28,8 @@ import { LoggedComponent } from './pages/logged/logged.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NewProjectComponent } from './pages/logged/new-project/new-project.component';
 import { ProjectsComponent } from './pages/logged/projects/projects.component';
+import { UploadedFileComponent } from './componens/uploaded-file/uploaded-file.component';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { ProjectsComponent } from './pages/logged/projects/projects.component';
     LoggedComponent,
     RegisterComponent,
     NewProjectComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    UploadedFileComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,8 @@ import { ProjectsComponent } from './pages/logged/projects/projects.component';
     DialogModule,
     ReactiveFormsModule,
     ProgressSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    MenubarModule
   ],
   providers: [
     HttpService,
