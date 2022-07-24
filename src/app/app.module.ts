@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 /**
  * PRIMENG MODULES
@@ -13,6 +14,8 @@ import { SlideMenuModule } from 'primeng/slidemenu';
 import { DialogModule } from 'primeng/dialog';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { MenubarModule } from 'primeng/menubar';
+import { ListboxModule } from 'primeng/listbox';
+
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
@@ -29,6 +32,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { NewProjectComponent } from './pages/logged/new-project/new-project.component';
 import { ProjectsComponent } from './pages/logged/projects/projects.component';
 import { UploadedFileComponent } from './componens/uploaded-file/uploaded-file.component';
+import { AddedTeamMemberComponent } from './componens/added-team-member/added-team-member.component';
+import { AddedLinkComponent } from './componens/added-link/added-link.component';
 
 
 @NgModule({
@@ -45,7 +50,9 @@ import { UploadedFileComponent } from './componens/uploaded-file/uploaded-file.c
     RegisterComponent,
     NewProjectComponent,
     ProjectsComponent,
-    UploadedFileComponent
+    UploadedFileComponent,
+    AddedTeamMemberComponent,
+    AddedLinkComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +64,9 @@ import { UploadedFileComponent } from './componens/uploaded-file/uploaded-file.c
     ReactiveFormsModule,
     ProgressSpinnerModule,
     HttpClientModule,
-    MenubarModule
+    MenubarModule,
+    ListboxModule,
+    FormsModule
   ],
   providers: [
     HttpService,

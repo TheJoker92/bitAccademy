@@ -3,17 +3,84 @@
         <h2>{{ 'LOGGED.NEW_PROJECT' | lang }}</h2>
     </div>
     <div class="container-form">
-        <form action="">
+        <form [formGroup]="projectForm">
                 <div class="p-inputgroup w-50vw mt-10px">
                     <span class="p-inputgroup-addon"><i class="pi pi-briefcase"></i></span>
                     <input type="text" 
                            pInputText 
-                           placeholder="{{ 'PROJECTNAV.NEW_PROJECT.FORM.NAME_PROJECT' | lang}}">         
+                           placeholder="{{ 'PROJECTNAV.NEW_PROJECT.FORM.NAME_PROJECT' | lang}}"
+                           formControlName="name">         
                 </div>
                 <div class="p-inputgroup mt-10px">
                     <textarea class="w-50vw h-50px" 
                               pInputTextarea
-                              placeholder="{{ 'PROJECTNAV.NEW_PROJECT.FORM.DESCRIPTION' | lang}}"></textarea>
+                              placeholder="{{ 'PROJECTNAV.NEW_PROJECT.FORM.DESCRIPTION' | lang}}"
+                              formControlName="description"></textarea>
+                </div>
+                <div class="p-inputgroup column-container mt-10px">
+                    <h3>{{ 'PROJECTNAV.NEW_PROJECT.FORM.TEAM' | lang}}</h3>
+                    <div class="p-inputgroup w-50vw mt-10px">
+                        <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
+                            <input #searchUsers
+                                   type="text" 
+                                   pInputText 
+                                   placeholder="{{ 'PROJECTNAV.NEW_PROJECT.FORM.SEARCH_TEAM_MEMBER' | lang}}"
+                                   (input)="onSearch()">      
+                    </div>
+                    <div *ngIf="searchUsers.value.length && displayPeopleResult">
+                        <p-listbox [(ngModel)]="selectedUsers" 
+                                   [multiple]="true" 
+                                   (click)="onClickItem($event)" 
+                                   [options]="searchedUsers" 
+                                   optionLabel="email" 
+                                   optionValue="id"
+                                   formControlName="users"
+                                   [checkbox]="isCheckbox">
+                        </p-listbox>
+                        <button (click)="onSelectionPeopleConfirm()" class="w-100">{{ 'PROJECTNAV.NEW_PROJECT.FORM.SELECTED_USER_CONFIRM' | lang}}</button>
+                    </div>
+                </div>
+                <div class="mt-20px container-users">
+                    <div *ngIf="!addedUsers.length;else userListContainer">
+                        {{ 'PROJECTNAV.NEW_PROJECT.FORM.NO_TEAM_MEMBER' | lang}}
+                    </div>
+                    <ng-template #userListContainer>
+                        <div *ngFor="let addedUser of addedUsers">
+                            <app-added-team-member [addedTeamMember]="addedUser" 
+                                               (deleteE)="deleteAddedUser(addedUser)">
+                            </app-added-team-member>
+                            <br>
+                        </div>
+                    </ng-template>
+                </div>
+                <div class="p-inputgroup column-container mt-10px">
+                    <h3>{{ 'PROJECTNAV.NEW_PROJECT.FORM.LINKS' | lang}}</h3>
+                    <div class="p-inputgroup w-50vw mt-10px">
+                        <span class="p-inputgroup-addon"><i class="pi pi-link"></i></span>
+                        <input type="text" 
+                               id="newLink"
+                               pInputText 
+                               placeholder="{{ 'PROJECTNAV.NEW_PROJECT.FORM.PLACEHOLDER_INPUT_LINK' | lang}}"
+                               formControlName="name">     
+                        <span class="p-inputgroup-addon action"><i class="pi pi-plus"></i></span>  
+                    </div>
+                    
+                   
+                    
+
+                </div>
+                <div class="mt-20px container-uploaded-file">
+                    <div *ngIf="!uploadedFiles.length;else linksContainer">
+                        {{ 'PROJECTNAV.NEW_PROJECT.FORM.NO_LINK' | lang }}
+                    </div>
+                    <ng-template #linksContainer>
+                        <div *ngFor="let addedLink of addedLinks">
+                            <app-added-link [addedLink]="addedLink" 
+                                               (deleteE)="deleteAddedLink(addedLink)">
+                            </app-added-link>
+                            <br>
+                        </div>
+                    </ng-template>
                 </div>
                 <div class="p-inputgroup column-container mt-10px">
                     <h3>{{ 'PROJECTNAV.NEW_PROJECT.FORM.ATTACHMENTS' | lang}}</h3>
@@ -23,24 +90,37 @@
                             label="{{ 'PROJECTNAV.NEW_PROJECT.FORM.ADD_ATTACHMENT' | lang}}" 
                             class="p-button-outlined p-button-secondary"
                             style="color:black"
-                            (click)="fileUpload.click()"></button>
-                            <input id="inputfile" 
-                                   #fileUpload 
-                                   multiple
-                                   type="file" 
-                                   (click)="importFile($event)">
+                            (click)="fileUpload.click()">
+                    </button>
+                    <input id="inputfile" 
+                            #fileUpload 
+                            multiple
+                            type="file" 
+                            (click)="importFile($event)">
 
                 </div>
                 <div class="mt-20px container-uploaded-file">
                     <div *ngIf="!uploadedFiles.length;else fileListContainer">
-                        {{ 'PROJECTNAV.NEW_PROJECT.FORM.NO_FILE' | lang}}
+                        {{ 'PROJECTNAV.NEW_PROJECT.FORM.NO_FILE' | lang }}
                     </div>
                     <ng-template #fileListContainer>
                         <div *ngFor="let uploadedFile of uploadedFiles">
-                            <app-uploaded-file [uploadedFile]="uploadedFile"></app-uploaded-file>
+                            <app-uploaded-file [uploadedFile]="uploadedFile" 
+                                               (deleteE)="deleteAddedFile(uploadedFile)">
+                            </app-uploaded-file>
                             <br>
                         </div>
                     </ng-template>
+                </div>
+                <div class="p-inputgroup column-container mt-40px">
+                    <button pButton 
+                            pRipple 
+                            type="button" 
+                            label="{{ 'PROJECTNAV.NEW_PROJECT.FORM.SUBMIT' | lang}}" 
+                            class="p-button-outlined p-button-secondary"
+                            style="color:white; background-color: green;"
+                            (click)="createProject()">
+                    </button>
                 </div>
         </form>
     </div>

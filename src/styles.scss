@@ -10,6 +10,10 @@ body {
     margin: 0px;
 }
 
+.w-100 {
+    width: 100%;
+}
+
 .pl10 {
     padding-left:10px;
 }
@@ -75,12 +79,24 @@ app-project-nav span {
     white-space: nowrap;
 }
 
+.input-form input {
+    height: 40px;
+}
+
+.mb-10px {
+    margin-bottom: 10px;
+}
+
 .mt-10px {
     margin-top: 10px;
 }
 
 .mt-20px {
     margin-top: 20px;
+}
+
+.mt-40px {
+    margin-top: 40px;
 }
 
 .column-container {
@@ -91,4 +107,20 @@ app-project-nav span {
 .row-container {
     display: flex;
     justify-content: space-between;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+.p-inputgroup-addon.action {
+    background: #888888;
+    color: #252525;
+    border-top: 1px solid #888888;
+    border-left: 1px solid #888888;
+    border-right: 1px solid #888888;
+    border-bottom: 1px solid #888888;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }

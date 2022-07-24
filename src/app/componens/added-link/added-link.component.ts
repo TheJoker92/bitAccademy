@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-uploaded-file',
-  templateUrl: './uploaded-file.component.html',
-  styleUrls: ['./uploaded-file.component.scss']
+  selector: 'app-added-link',
+  templateUrl: './added-link.component.html',
+  styleUrls: ['./added-link.component.scss']
 })
-export class UploadedFileComponent implements OnInit {
+export class AddedLinkComponent implements OnInit {
 
-  @Input() uploadedFile: File | undefined
+  @Input() addedLink: string | undefined
   @Output() deleteE: EventEmitter<void> = new EventEmitter<void>()
 
   constructor() { }

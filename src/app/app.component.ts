@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { NavigationStart, Event as NavigationEvent } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { ENDPOINTS } from './app-routing.module';
 import { RouteService } from './services/route.service';
+import { PrimeNGConfig } from 'primeng/api';
+import { LangPipe } from './utils/pipes/lang.pipe';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,8 @@ export class AppComponent {
   ENDPOINTS = ENDPOINTS
 
   constructor(public router: Router,
-              public routeService: RouteService) {
+              public routeService: RouteService,
+              private config: PrimeNGConfig) {
     
   }
 
@@ -29,6 +31,13 @@ export class AppComponent {
           console.log(this.routeService.actualRoute)
         }
       })
+
+      this.config.setTranslation({
+        accept: LangPipe.translate('PRIMENG.ACCEPT'),
+        reject: LangPipe.translate('PRIMENG.REJECT'),
+        emptyMessage: LangPipe.translate('PRIMENG.EMPTYMESSAGE')
+        //translations
+    });
   }
 
   ngOnDestroy() {
