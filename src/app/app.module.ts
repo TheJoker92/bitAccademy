@@ -20,7 +20,7 @@ import { ListboxModule } from 'primeng/listbox';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { TopnavComponent } from './topnav/topnav.component';
-import { ButtonOptionsComponent } from './componens/button-options/button-options.component';
+import { ButtonOptionsComponent } from './components/button-options/button-options.component';
 import { LangPipe } from './utils/pipes/lang.pipe';
 import { LoaderComponent } from './loader/loader.component';
 import { ProjectNavComponent } from './project-nav/project-nav.component';
@@ -31,9 +31,9 @@ import { LoggedComponent } from './pages/logged/logged.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NewProjectComponent } from './pages/logged/new-project/new-project.component';
 import { ProjectsComponent } from './pages/logged/projects/projects.component';
-import { UploadedFileComponent } from './componens/uploaded-file/uploaded-file.component';
-import { AddedTeamMemberComponent } from './componens/added-team-member/added-team-member.component';
-import { AddedLinkComponent } from './componens/added-link/added-link.component';
+import { UploadedFileComponent } from './components/uploaded-file/uploaded-file.component';
+import { AddedTeamMemberComponent } from './components/added-team-member/added-team-member.component';
+import { AddedLinkComponent } from './components/added-link/added-link.component';
 
 
 @NgModule({
